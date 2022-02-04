@@ -1,0 +1,29 @@
+﻿@model IEnumerable<GerenciadorSJD.Models.Policia>
+
+@{
+    ViewData["Title"] = "Policial Miliar";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<div class="row">
+    <div class="form-control bg-success bg-opacity-10 border-bottom box-shadow mb-3">
+        <form class="d-flex" asp-action="BuscaSimples">
+            <input class="form-control me-sm-2" name="re" type="text" placeholder="Pesquisa por Nome ou RE">
+            <button class="btn btn-outline-dark my-2 my-sm-0" type="submit">Pesquisar</button>
+        </form>
+    </div>
+</div>
+
+
+
+<div class="row col-md-5">
+    <div class="form-control bg-success bg-opacity-10 border-bottom box-shadow mb-3">
+        <div class="form-group">
+            <fieldset>
+                <legend>Cadastrar</legend>
+                <a asp-action="Create" class="btn btn-outline-dark">Novo</a>
+            </fieldset>           
+        </div>       
+    </div> 
+</div>   

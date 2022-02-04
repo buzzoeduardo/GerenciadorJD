@@ -1,0 +1,23 @@
+﻿@model GerenciadorSJD.Models.ErrorViewModel
+@{
+    ViewData["Title"] = "Error";
+}
+
+
+    <div class="modal-backdrop">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title text-danger">Erro!</h5>
+                </div>
+                <div class="modal-body">
+                    <p>@Model.Message</p>
+                </div>
+                <div class="modal-footer">
+                    <form asp-action="Create">
+                        <a asp-action="Index" class="btn btn-outline-danger ms-sm-6">Retornar</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>

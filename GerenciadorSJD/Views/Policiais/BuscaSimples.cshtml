@@ -1,0 +1,46 @@
+﻿@model IEnumerable<GerenciadorSJD.Models.Policia>
+    @{
+        ViewData["Title"] = "BuscaSimples";
+    }
+
+    <h3>Relação de Policiais Militares</h3>
+
+    <div class="form-group">
+        <a asp-action="Index" class="btn btn-outline-dark">Retornar</a> |
+        <a asp-action="Create" class="btn btn-outline-dark">Novo</a>
+    </div>
+    <br />
+    <table class="table table-striped table-hover">
+        <thead class="bg-success bg-opacity-25">
+            <tr>
+                <th class="tamanholetra">
+                    Policial Militar                  
+                </th>
+                
+                <th class="tamanholetra">
+                    @Html.DisplayNameFor(model => model.Email)
+                </th>                
+                <th></th> 
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.OrderBy(x => x.PostGrad))
+            {
+                <tr>
+                    <td>
+                       <span> @Html.DisplayFor(modelItem => item.PostGrad) &nbsp;</span> 
+                       <span> @Html.DisplayFor(modelItem => item.Re) -</span>
+                       <span class="text-uppercase"> @Html.DisplayFor(modelItem => item.Digito) &nbsp;</span> 
+                       <span class="text-uppercase">@Html.DisplayFor(modelItem => item.Nome)</span> 
+                    </td>
+                    <td class="text-lowercase">
+                        @Html.DisplayFor(modelItem => item.Email)
+                    </td>
+                                    
+                    <td>                         
+                        <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-outline-info">Detalhes</a> 
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
